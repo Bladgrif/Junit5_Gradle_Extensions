@@ -22,14 +22,14 @@ public class CalculatorWithLoggingTests {
 
     @Test
     @DisplayName("Addition test")
-    @Tag("unitTest")
+    @Tag("unit")
     void testAdd() {
         assertEquals(5, calculator.addition(2, 3));
     }
 
     @Test
     @DisplayName("Subtraction test")
-    @Tag("unitTest")
+    @Tag("unit")
     void testSubtract() {
         assertEquals(1, calculator.subtract(3, 2));
     }
