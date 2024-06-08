@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter:5.9.3"
+    )
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task unitTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'unitTest'
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+task parametrizedTest(type: Test) {
+    useJUnitPlatform {
+        includeTags 'parametrized'
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
