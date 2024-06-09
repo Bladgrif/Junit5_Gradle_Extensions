@@ -58,5 +58,21 @@ public class CalculatorTests {
     }
 
     @Nested
+    @DisplayName("Tests for the add method")
+    class AddTests {
+        @Test
+        @DisplayName("Test addition of two positive numbers")
+        @Tag("unit")
+        void testAddPositiveNumbers() {
+            assertEquals(5, calculator.addition(2, 3));
+        }
+
+        @Test
+        @DisplayName("Test addition of two negative numbers")
+        @Tag("unit")
+        void testAddNegativeNumbers() {
+            assertEquals(-5, calculator.addition(-2, -3));
+        }
+    }
 
 }
